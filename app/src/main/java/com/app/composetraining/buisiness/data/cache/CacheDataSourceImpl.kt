@@ -1,6 +1,5 @@
 package com.app.composetraining.buisiness.data.cache
 
-import android.util.Log
 import com.app.composetraining.buisiness.domain.models.Photo
 import com.app.composetraining.framework.datasource.cache.mapper.PhotoCacheMapper
 import com.app.composetraining.framework.datasource.cache.service.PhotoDaoService
