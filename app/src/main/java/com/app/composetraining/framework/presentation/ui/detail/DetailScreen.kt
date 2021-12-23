@@ -21,8 +21,8 @@ import com.skydoves.landscapist.glide.GlideImage
 /**
  * contains a specific photo and a description of the item selected by the user
  *
- * @param (event) on click go back to the list of photos
- * @param (state) viewModel
+ * @param onClickSeeAllPhotos (event) on click go back to the list of photos
+ * @param viewModel (state) viewModel
  */
 @Composable
 fun DetailScreen(

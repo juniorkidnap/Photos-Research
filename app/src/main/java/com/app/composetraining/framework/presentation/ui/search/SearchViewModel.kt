@@ -64,7 +64,7 @@ constructor(
     /**
      * Start new search on [NewSearchEvent] and making request
      *
-     * @param (state) is user input
+     * @param searchQuery (state) is user input
      */
     private fun newSearch(searchQuery: String) {
         listPhotos.clear()
@@ -95,7 +95,7 @@ constructor(
      * Setting list scroll position to check if it's time to get
      * 2nd page
      *
-     * @param (state) LazyColumn latest item position
+     * @param position (state) ListScroll position
      */
     fun setListScrollPosition(position: Int) {
         scrollPosition = position
@@ -108,9 +108,9 @@ constructor(
      * if loading -> [DataState.Loading], [isLoading] = true
      * if error -> [DataState.Error], [isError] = true
      *
-     * @param (state) user query
-     * @param (state) amount items to get from request
-     * @param (state) number of page
+     * @param searchQuery (state) user query
+     * @param perPage (state) amount items to get from request
+     * @param page (state) number of page
      */
     private fun makeRequest(
         searchQuery: String,
@@ -147,6 +147,8 @@ constructor(
      * Adding photos to [listPhotos]
      * if its new request add all data from response to [listPhotos]
      * if [listPhotos] is not empty -> adding new items
+     *
+     * @param photos (state) list of photos
      */
     private fun submitData(photos: List<Photo>) {
         if (listPhotos.isEmpty()) {
@@ -164,6 +166,8 @@ constructor(
      * Checking is [Photo] selected
      * if true -> unselecting and remove from [selectedPhotos] list
      * if false -> selecting and add to [selectedPhotos] list
+     *
+     * @param photo - photo selected by user
      */
     fun checkIsSelected(photo: Photo) {
         if (photo.selected) {

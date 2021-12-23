@@ -31,7 +31,12 @@ constructor(
 
     /**
      * Getting data from Network, passing it to local Cache Storage
-     * @return [DataState] result with [Flow]
+     *
+     * @param searchQuery - users input
+     * @param perPage - amount of photos getting from one page
+     * @param page - number of page
+     *
+     * @return [DataState] result by [Flow]
      */
     suspend fun execute(
         searchQuery: String,
@@ -52,7 +57,6 @@ constructor(
                 perPage = perPage.toString(),
                 page = page.toString()
             )
-            Log.d("mylog", "$response")
             cacheDataSource.insertList(response)
             val listPhotos = cacheDataSource.get()
             emit(DataState.Success(listPhotos))
