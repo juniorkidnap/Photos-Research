@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.app.composetraining.buisiness.domain.models.Photo
 import com.app.composetraining.buisiness.domain.state.DataState
-import com.app.composetraining.buisiness.interactors.MediaSaverInteractor
+import com.app.composetraining.buisiness.interactors.ExternalStorageInteractor
 import com.app.composetraining.buisiness.interactors.PhotosInteractor
 import com.app.composetraining.framework.presentation.utils.PHOTOS_PER_PAGE
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -22,19 +22,19 @@ class SearchViewModel
 @Inject
 constructor(
     private val photosInteractor: PhotosInteractor,
-    private val mediaSaver: MediaSaverInteractor
+    private val externalStorage: ExternalStorageInteractor
 ) : ViewModel() {
 
     companion object {
         const val ONE_MORE_PHOTO = 1
-        const val SNACKBAR_TEXT = "Saving photos"
+        const val SNACKBAR_TEXT = "Saving"
         const val PERMISSION_DENIED = "Permission denied"
     }
 
     var isLoading = mutableStateOf(false)
     var isError = mutableStateOf(false)
     var listPhotos = mutableStateListOf<Photo>()
-    var selectedPhotos = mutableStateListOf<Photo>()
+    private var selectedPhotos = mutableStateListOf<Photo>()
     var selectedPhotosCounter = mutableStateOf(0)
     var searchQuery = mutableStateOf("")
     val page = mutableStateOf(1)
@@ -207,10 +207,10 @@ constructor(
      */
     fun savePhotos() {
         viewModelScope.launch {
-            mediaSaver.checkPermission().collect {
+            externalStorage.checkPermission().collect {
                 if (it) {
                     for (photo in selectedPhotos) {
-                        mediaSaver.apply {
+                        externalStorage.apply {
                             downloadPhoto(photo.url)
                         }
                     }

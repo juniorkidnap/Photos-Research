@@ -24,7 +24,7 @@ import javax.inject.Inject
 /**
  * Saving photo to external storage
  */
-class MediaSaverInteractor
+class ExternalStorageInteractor
 @Inject
 constructor(
     @ApplicationContext val appContext: Context
