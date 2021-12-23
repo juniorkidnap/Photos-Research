@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Photo research</string>
+    <string name="text_selected">Selected: </string>
+    <string name="text_empty_list">There\'s nothing here</string>
+    <string name="text_empty_cartoon">¯\\_(ツ)_/¯</string>
+    <string name="text_example">Example</string>
+    <string name="text_mime_type">image/jpeg</string>
+    <string name="text_image_extension">.jpg</string>
+    <string name="success_saving">Photo successfully saved.</string>
+    <string name="button_search_text">Search</string>
+    <string name="button_save_text">Save</string>
+    <string name="button_cancel_text">Cancel</string>
+    <string name="button_back_text">Back</string>
+    <string name="error_no_internet">Troubles with internet connection.</string>
+    <string name="error_image_loading">Image request failed.</string>
+    <string name="error_route">route is not recognized.</string>
+    <string name="error_bitmap">Failed to save bitmap.</string>
+    <string name="error_media_store">Failed to create media store.</string>
+    <string name="error_saving">Troubles with saving image.</string>
+</resources>
