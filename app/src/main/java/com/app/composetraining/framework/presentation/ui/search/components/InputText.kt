@@ -48,7 +48,7 @@ fun SearchInputText(
 /**
  * Material [TextButton] for [SearchScreen]
  *
- * @param onClick (event) notify caller of click events
+ * @param onClick (event) notify caller with onClick event
  * @param text button text
  * @param modifier modifier for button
  * @param enabled enable or disable the button

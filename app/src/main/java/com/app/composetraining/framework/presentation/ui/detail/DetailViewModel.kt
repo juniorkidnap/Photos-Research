@@ -22,8 +22,10 @@ constructor(
     savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
-    private val _currentPhoto = mutableStateOf(Photo())
-    val currentPhoto: State<Photo> get() = _currentPhoto
+    /**
+     * Currently displaying photo
+     */
+    val currentPhoto = mutableStateOf(Photo())
 
     /**
      * Searching for [Photo] in database by [primaryKeyId] of [Photo]
@@ -34,7 +36,7 @@ constructor(
         savedStateHandle.get<Int>("photoId")?.also { photoId ->
             if (photoId != -1) {
                 viewModelScope.launch {
-                    _currentPhoto.value = interactor.getPhotoById(photoId)
+                    currentPhoto.value = interactor.getPhotoById(photoId)
                 }
             }
         }

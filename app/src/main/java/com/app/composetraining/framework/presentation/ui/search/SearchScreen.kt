@@ -22,7 +22,8 @@ import kotlinx.coroutines.flow.collectLatest
 /**
  * Composable component that shows up search results
  *
- * @param onClickSeeDetail (state) displaying message, that request was failed
+ * @param onClickSeeDetail (event) starting executing request with user input
+ * @param viewModel (state)
  */
 @Composable
 fun SearchScreen(
@@ -96,8 +97,9 @@ fun SearchScreen(
 /**
  * Stateful composable that allow to start new Search
  *
+ * @param searchQuery (state) contains users input
+ * @param buttonText (state) text to display on button
  * @param onSearch (event) starts photo research
- * @param buttonText (text) text to display on button
  */
 @Composable
 fun SearchEntryInput(

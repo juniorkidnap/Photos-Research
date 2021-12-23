@@ -1,5 +1,8 @@
 package com.app.composetraining.buisiness.domain.models
 
+/**
+ * domain model, contains info about downloaded photo
+ */
 data class Photo(
 
     val primaryKeyId: Int? = null,

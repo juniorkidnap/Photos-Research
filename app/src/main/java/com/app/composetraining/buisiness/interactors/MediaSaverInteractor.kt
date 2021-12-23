@@ -32,6 +32,8 @@ constructor(
 
     /**
      * Downloading photo with [Glide] from [url]
+     *
+     * @param url is photo url
      */
     fun downloadPhoto(
         url: String?
@@ -109,7 +111,7 @@ constructor(
     }
 
     /**
-     * Checking for permission
+     * Checking for permission access to external storage
      */
     suspend fun checkPermission(): Flow<Boolean> = flow {
         if (MainActivity.isWritePermissionGranted && MainActivity.isReadPermissionGranted) {

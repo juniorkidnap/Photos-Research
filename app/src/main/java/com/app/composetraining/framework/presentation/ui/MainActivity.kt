@@ -17,7 +17,7 @@ import dagger.hilt.android.AndroidEntryPoint
 /**
  * Main Activity
  *
- * Setting Application Navigation Host and checking premissions
+ * Setting Application Navigation Host and checking permissions
  * for saving photos to internal storage
  */
 @AndroidEntryPoint
